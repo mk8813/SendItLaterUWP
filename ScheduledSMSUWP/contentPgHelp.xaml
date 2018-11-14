@@ -1,0 +1,78 @@
+﻿<ContentDialog
+    x:Class="ScheduledSMSUWP.contentPgHelp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScheduledSMSUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+   
+    PrimaryButtonText="Close"
+   MaxHeight="600"
+    MaxWidth="400"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <!--<Pivot>-->
+        <!--<PivotItem Header="Help">
+            
+            
+        </PivotItem>--> 
+        
+        
+        <!--<PivotItem Header="About">-->
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Foreground="{ThemeResource ApplicationForegroundThemeBrush}"  >
+                <!--"{ThemeResource ApplicationPageBackgroundThemeBrush}"-->
+                <Grid x:Name="grdPgHelp" Canvas.ZIndex="0" >
+            <Grid.Transitions>
+                <TransitionCollection>
+                    <ContentThemeTransition HorizontalOffset="100" VerticalOffset="200"></ContentThemeTransition>
+                </TransitionCollection>
+            </Grid.Transitions>
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition  Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="50"/>
+                      
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+
+
+
+                    <Image Grid.Column="0" MaxHeight="128" MaxWidth="128"    Grid.Row="1" Source="ms-appx:///Assets/raw-logo.png"></Image>
+            <TextBlock  TextAlignment="Center" Grid.Column="0" Grid.Row="2" FontSize="20">Sendenarium</TextBlock>
+                    <TextBlock x:Name="lblVersion"  TextAlignment="Center" Grid.Column="0" Grid.Row="3" FontSize="12" />
+
+                    <TextBlock x:Name="lblCopyright"  TextAlignment="Center"  Grid.Column="0" Grid.Row="4" FontSize="14" />
+
+                    <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button x:Name="btnRate" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" Background="{ThemeResource SystemAccentColor}"  Width="165px"  Content="Rate and review" Click="btnRate_Click" />
+                        <TextBlock Height="5"></TextBlock>
+                        <Button x:Name="btnFeedback" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" Background="{ThemeResource SystemAccentColor}"  Width="165px"  Content="Send Feedback" Click="btnFeedback_Click"/>
+                        <TextBlock Height="10"></TextBlock>
+                <TextBlock  x:Name="txtMoreApps" Tapped="txtMoreApps_Tapped" PointerEntered="txtMoreApps_PointerEntered" PointerExited="txtMoreApps_PointerExited" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13">
+                    <Underline>
+                        <Run>
+                            More Apps
+                        </Run>
+                    </Underline>
+                </TextBlock>
+
+            </StackPanel>
+
+
+                </Grid>
+            </ScrollViewer>
+
+        <!--</PivotItem>
+    </Pivot>-->
+
+</ContentDialog>

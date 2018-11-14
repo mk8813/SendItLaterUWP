@@ -1,0 +1,73 @@
+﻿<ContentDialog
+    x:Class="ScheduledSMSUWP.donateDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScheduledSMSUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Donate"
+    PrimaryButtonText="Close"
+VerticalAlignment="Center" HorizontalAlignment="Center" 
+    MinHeight="350"
+  MinWidth="300"
+  MaxHeight="350"
+    MaxWidth="350"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <ScrollViewer BorderThickness="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                <TextBlock TextWrapping="Wrap" Text="Please cheer me up to develop more Apps!"></TextBlock>
+                <ProgressRing x:Name="workingProgress" Visibility="Collapsed" IsActive="True" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" ></ProgressRing>
+                <ListBox Visibility="Collapsed" ScrollViewer.VerticalScrollMode="Disabled" ScrollViewer.HorizontalScrollMode="Auto"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="lstDonation">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel>
+                                <VirtualizingStackPanel.ChildrenTransitions>
+                                    <TransitionCollection>
+                                        <EdgeUIThemeTransition Edge="Bottom" />
+                                    </TransitionCollection>
+                                </VirtualizingStackPanel.ChildrenTransitions>
+                            </VirtualizingStackPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0"  Tapped="lstDonation_Tapped" Foreground="{ThemeResource SystemAccentColor}" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" TextAlignment="Left"  Text="{Binding Title}"></TextBlock>
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+
+</ContentDialog>

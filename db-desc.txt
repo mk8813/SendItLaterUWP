@@ -1,0 +1,14 @@
+﻿------------------tbl_ScheduledTasks-----------------------
+Id [UNIQUE]
+AppType [WHATSAPP-TGMSG-FBMSG-SMS-TWITTER-SKYPE-EMAIL]
+DateInsert [2017/12/05]
+TargetDate [2017/11/15]
+TargetTime [20:45]
+To [email , name or number]
+Subject [email only]
+Message [2048-MAX]
+IsSent [true/false]
+IsScheduled [true/false]
+HasAttachment [true/false]
+AttachmentPath [c:/user/file.jpg]
+---------------------------------------------------------
